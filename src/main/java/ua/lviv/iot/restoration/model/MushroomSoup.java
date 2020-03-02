@@ -6,10 +6,10 @@ public class MushroomSoup extends Soup {
 	private String mushroomtype;
 	String nameOfDish = "Mushroom soup";
 
-	public MushroomSoup(double priceInUAH, int massInGrams, int optionID, ArrayList<String> ingredients,
+	public MushroomSoup(double priceInUAH, int massInGrams, String nameOfDish, ArrayList<String> ingredients,
 			ArrayList<Specification> specifications, Condition condition, int timeForCookingInMinutes,
 			String consistence, String mushroomtype) {
-		super(priceInUAH, massInGrams, optionID, ingredients, specifications, condition, timeForCookingInMinutes,
+		super(priceInUAH, massInGrams, nameOfDish, ingredients, specifications, condition, timeForCookingInMinutes,
 				consistence);
 		this.mushroomtype = mushroomtype;
 	}

@@ -24,17 +24,23 @@ public class BaseRestorationManagerTest {
 		firstSpecifications.add(Specification.BABY);
 
 		ArrayList<String> secondIngredients = new ArrayList<String>();
-		firstIngredients.add("lettuce");
-		firstIngredients.add("cabbage");
-		firstIngredients.add("aubergine");
+		secondIngredients.add("lettuce");
+		secondIngredients.add("aubergine");
 		ArrayList<Specification> secondSpecifications = new ArrayList<Specification>();
 		secondSpecifications.add(Specification.NON_ALLERGIC);
+		ArrayList<String> thirdIngredients = new ArrayList<String>();
+		thirdIngredients.add("carrot");
+		thirdIngredients.add("pork");
+		thirdIngredients.add("cheese");
+		thirdIngredients.add("eggs");
+		
+		
 
-		menu.add(new Lasagna(100.25, 150, 11, firstIngredients, firstSpecifications, Condition.HOT, 40, "potato",
+		menu.add(new Lasagna(100.25, 150, "Vegetarian lasagna", firstIngredients, firstSpecifications, Condition.HOT, 50, "potato",
 				"beef", "balognesa", 100, 50, 20, "new"));
-		menu.add(new Lasagna(60.50, 100, 11, secondIngredients, secondSpecifications, Condition.COLD, 40, "potato",
+		menu.add(new Lasagna(60.50, 100, "Cold lasagna", secondIngredients, secondSpecifications, Condition.COLD, 20, "potato",
 				"beef", "balognesa", 100, 50, 20, "standart"));
-		menu.add(new Lasagna(49.99, 250, 11, secondIngredients, secondSpecifications, Condition.HOT, 40, "potato",
+		menu.add(new Lasagna(49.99, 250, "Hot lasagna", thirdIngredients, secondSpecifications, Condition.HOT, 35, "potato",
 				"beef", "balognesa", 100, 50, 20, "Italian"));
 
 	}

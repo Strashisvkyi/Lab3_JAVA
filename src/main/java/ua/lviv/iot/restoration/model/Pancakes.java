@@ -7,10 +7,10 @@ public class Pancakes extends Dessert {
 	private String syrup;
 	String nameOfDish = "Pancakes";
 
-	public Pancakes(double priceInUAH, int massInGrams, int optionID, ArrayList<String> ingredients,
+	public Pancakes(double priceInUAH, int massInGrams, String nameOfDish, ArrayList<String> ingredients,
 			ArrayList<Specification> specifications, Condition condition, int timeForCookingInMinutes,
 			int persentageOfSugar, int numberOfPancakes, String syrup) {
-		super(priceInUAH, massInGrams, optionID, ingredients, specifications, condition, timeForCookingInMinutes,
+		super(priceInUAH, massInGrams, nameOfDish, ingredients, specifications, condition, timeForCookingInMinutes,
 				persentageOfSugar);
 		this.numberOfPancakes = numberOfPancakes;
 		this.syrup = syrup;

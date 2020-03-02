@@ -5,10 +5,10 @@ import java.util.ArrayList;
 public abstract class Dessert extends AbstractDish {
 	protected int persentageOfSugar;
 
-	public Dessert(double priceInUAH, int massInGrams, int optionID, ArrayList<String> ingredients,
+	public Dessert(double priceInUAH, int massInGrams, String nameOfDish, ArrayList<String> ingredients,
 			ArrayList<Specification> specifications, Condition condition, int timeForCookingInMinutes,
 			int persentageOfSugar) {
-		super(priceInUAH, massInGrams, optionID, ingredients, specifications, condition, timeForCookingInMinutes);
+		super(priceInUAH, massInGrams, nameOfDish, ingredients, specifications, condition, timeForCookingInMinutes);
 		this.persentageOfSugar = persentageOfSugar;
 	}
 

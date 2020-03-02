@@ -6,10 +6,10 @@ public class HerringSalad extends Salad {
 	private int persentageOfSalt;
 	String nameOfDish = "Herring Salad";
 
-	public HerringSalad(double priceInUAH, int massInGrams, int optionID, ArrayList<String> ingredients,
+	public HerringSalad(double priceInUAH, int massInGrams, String nameOfDish, ArrayList<String> ingredients,
 			ArrayList<Specification> specifications, Condition condition, int timeForCookingInMinutes,
 			String saladDressing, int persentageOfSalt) {
-		super(priceInUAH, massInGrams, optionID, ingredients, specifications, condition, timeForCookingInMinutes,
+		super(priceInUAH, massInGrams, nameOfDish, ingredients, specifications, condition, timeForCookingInMinutes,
 				saladDressing);
 		this.persentageOfSalt = persentageOfSalt;
 	}

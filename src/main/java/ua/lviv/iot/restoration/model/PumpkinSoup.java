@@ -6,10 +6,10 @@ public class PumpkinSoup extends Soup {
 	private String countryOfOrigin;
 	String nameOfDish = "Pumpkin soup";
 
-	public PumpkinSoup(double priceInUAH, int massInGrams, int optionID, ArrayList<String> ingredients,
+	public PumpkinSoup(double priceInUAH, int massInGrams, String nameOfDish, ArrayList<String> ingredients,
 			ArrayList<Specification> specifications, Condition condition, int timeForCookingInMinutes,
 			String consistence, String countryOfOrigin) {
-		super(priceInUAH, massInGrams, optionID, ingredients, specifications, condition, timeForCookingInMinutes,
+		super(priceInUAH, massInGrams, nameOfDish, ingredients, specifications, condition, timeForCookingInMinutes,
 				consistence);
 		this.countryOfOrigin = countryOfOrigin;
 	}

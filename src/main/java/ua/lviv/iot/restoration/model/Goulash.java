@@ -7,11 +7,11 @@ public class Goulash extends MainCourse {
 	private DegreeOfMeatDoneness degreeOfMeatDoneness;
 	String nameOfDish = "Goulash";
 
-	public Goulash(double priceInUAH, int massInGrams, int optionID, ArrayList<String> ingredients,
+	public Goulash(double priceInUAH, int massInGrams, String nameOfDish, ArrayList<String> ingredients,
 			ArrayList<Specification> specifications, Condition condition, int timeForCookingInMinutes, String sideDish,
 			String meat, String sauce, int massOfSideDishInGrams, int massOfMeatInGrams, int massOfSauceInGrams,
 			String pungencyLevel, DegreeOfMeatDoneness degreeOfMeatDoneness) {
-		super(priceInUAH, massInGrams, optionID, ingredients, specifications, condition, timeForCookingInMinutes,
+		super(priceInUAH, massInGrams, nameOfDish, ingredients, specifications, condition, timeForCookingInMinutes,
 				sideDish, meat, sauce, massOfSideDishInGrams, massOfMeatInGrams, massOfSauceInGrams);
 		this.pungencyLevel = pungencyLevel;
 		this.degreeOfMeatDoneness = degreeOfMeatDoneness;

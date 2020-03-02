@@ -5,10 +5,10 @@ import java.util.ArrayList;
 public abstract class Soup extends AbstractDish {
 	protected String consistence;
 
-	public Soup(double priceInUAH, int massInGrams, int optionID, ArrayList<String> ingredients,
+	public Soup(double priceInUAH, int massInGrams, String nameOfDish, ArrayList<String> ingredients,
 			ArrayList<Specification> specifications, Condition condition, int timeForCookingInMinutes,
 			String consistence) {
-		super(priceInUAH, massInGrams, optionID, ingredients, specifications, condition, timeForCookingInMinutes);
+		super(priceInUAH, massInGrams, nameOfDish, ingredients, specifications, condition, timeForCookingInMinutes);
 		this.consistence = consistence;
 	}
 

@@ -6,10 +6,10 @@ public class Muffin extends Dessert {
 	private String filling;
 	String nameOfDish = "Muffin";
 
-	public Muffin(double priceInUAH, int massInGrams, int optionID, ArrayList<String> ingredients,
+	public Muffin(double priceInUAH, int massInGrams, String nameOfDish, ArrayList<String> ingredients,
 			ArrayList<Specification> specifications, Condition condition, int timeForCookingInMinutes,
 			int persentageOfSugar, String filling) {
-		super(priceInUAH, massInGrams, optionID, ingredients, specifications, condition, timeForCookingInMinutes,
+		super(priceInUAH, massInGrams, nameOfDish, ingredients, specifications, condition, timeForCookingInMinutes,
 				persentageOfSugar);
 		this.filling = filling;
 	}

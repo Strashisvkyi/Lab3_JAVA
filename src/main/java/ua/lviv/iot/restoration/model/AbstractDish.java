@@ -6,12 +6,12 @@ import java.util.List;
 public class AbstractDish {
 	protected double priceInUAH;
 	protected int massInGrams;
-	protected int optionID;
+	protected String nameOfDish;
 	protected List<String> ingredients;
 	protected ArrayList<Specification> specifications;
 	protected Condition condition;
 	protected int timeForCookingInMinutes;
-	protected String nameOfDish;
+
 
 	public int getTimeForCookingInMinutes() {
 		return timeForCookingInMinutes;
@@ -35,11 +35,11 @@ public class AbstractDish {
 		this.priceInUAH = priceInUAH;
 	}
 
-	public AbstractDish(double priceInUAH, int massInGrams, int optionID, List<String> ingredients,
+	public AbstractDish(double priceInUAH, int massInGrams, String nameOfDish, List<String> ingredients,
 			ArrayList<Specification> specifications, Condition condition, int timeForCookingInMinutes) {
 		this.priceInUAH = priceInUAH;
 		this.massInGrams = massInGrams;
-		this.optionID = optionID;
+		this.nameOfDish = nameOfDish;
 		this.ingredients = ingredients;
 		this.specifications = specifications;
 		this.condition = condition;
@@ -55,8 +55,12 @@ public class AbstractDish {
 	}
 
 	public String getNameOfDish() {
-		// TODO Auto-generated method stub
+		
 		return nameOfDish;
+	}
+
+	public List<String> getIngredients() {
+		return ingredients;
 	}
 
 }

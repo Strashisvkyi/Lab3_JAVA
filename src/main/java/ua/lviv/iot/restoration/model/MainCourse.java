@@ -11,10 +11,10 @@ public class MainCourse extends AbstractDish {
 	protected int massOfMeatInGrams;
 	protected int massOfSauceInGrams;
 
-	public MainCourse(double priceInUAH, int massInGrams, int optionID, List<String> ingredients,
+	public MainCourse(double priceInUAH, int massInGrams, String nameOfDish, List<String> ingredients,
 			ArrayList<Specification> specifications, Condition condition, int timeForCookingInMinutes, String sideDish,
 			String meat, String sauce, int massOfSideDishInGrams, int massOfMeatInGrams, int massOfSauceInGrams) {
-		super(priceInUAH, massInGrams, optionID, ingredients, specifications, condition, timeForCookingInMinutes);
+		super(priceInUAH, massInGrams, nameOfDish, ingredients, specifications, condition, timeForCookingInMinutes);
 		this.sideDish = sideDish;
 		this.meat = meat;
 		this.sauce = sauce;
