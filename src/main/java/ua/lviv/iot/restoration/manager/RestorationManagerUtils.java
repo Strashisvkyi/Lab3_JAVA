@@ -1,8 +1,8 @@
 package ua.lviv.iot.restoration.manager;
 
+import java.io.Serializable;
 import java.util.Comparator;
 import java.util.List;
-
 import ua.lviv.iot.restoration.model.AbstractDish;
 import ua.lviv.iot.restoration.model.SortType;
 
@@ -16,11 +16,13 @@ public class RestorationManagerUtils {
 				return (int) (firstDish.getPriceInUAH() - secondDish.getPriceInUAH());
 			}
 		}
+
 		SorterOfDishesByPrice sorter = new SorterOfDishesByPrice();
 		if (sortType == SortType.ASCENDING) {
 			dishes.sort(sorter);
-		} else
+		} else {
 			dishes.sort(sorter.reversed());
+		}
 	}
 
 	public static void sortDishesByMass(SortType sortType, List<AbstractDish> dishes) {
@@ -30,11 +32,13 @@ public class RestorationManagerUtils {
 				return (int) (firstDish.getMassInGrams() - secondDish.getMassInGrams());
 			}
 		}
+
 		SorterOfDishesByMass sorter = new SorterOfDishesByMass();
 		if (sortType == SortType.ASCENDING) {
 			dishes.sort(sorter);
-		} else
+		} else {
 			dishes.sort(sorter.reversed());
+		}
 	}
 
 	public static void sortDishesByTimeForCooking(SortType sortType, List<AbstractDish> dishes) {
@@ -42,7 +46,9 @@ public class RestorationManagerUtils {
 				: SORTER_OF_DISHES_BY_TIME_FOR_COOKING.reversed());
 	}
 
-	public static class DishSorterByTimeForCooking implements Comparator<AbstractDish> {
+	public static class DishSorterByTimeForCooking implements Comparator<AbstractDish>, Serializable {
+		private static final long serialVersionUID = 1L;
+
 		@Override
 		public int compare(AbstractDish firstDish, AbstractDish secondDish) {
 			return firstDish.getTimeForCookingInMinutes() - secondDish.getTimeForCookingInMinutes();
@@ -72,10 +78,14 @@ public class RestorationManagerUtils {
 		dishes.sort(sortType == SortType.ASCENDING ? comparator : comparator.reversed());
 
 	}
-   public static void sortDishesByNumberOfSpecifications(SortType sortType, List<AbstractDish> dishes) {
-if(sortType == SortType.ASCENDING) {
-	dishes.sort((firstDish, secondDish) -> firstDish.getSpecifications().size() - secondDish.getSpecifications().size());
-}
-else dishes.sort((firstDish, secondDish) -> secondDish.getSpecifications().size() - firstDish.getSpecifications().size());
-   }
+
+	public static void sortDishesByNumberOfSpecifications(SortType sortType, List<AbstractDish> dishes) {
+		if (sortType == SortType.ASCENDING) {
+			dishes.sort((firstDish, secondDish) -> firstDish.getSpecifications().size()
+					- secondDish.getSpecifications().size());
+		} else {
+			dishes.sort((firstDish, secondDish) -> secondDish.getSpecifications().size()
+					- firstDish.getSpecifications().size());
+		}
+	}
 }

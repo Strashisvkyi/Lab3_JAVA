@@ -23,7 +23,37 @@ public class MainCourse extends AbstractDish {
 		this.massOfSauceInGrams = massOfSauceInGrams;
 	}
 
-	public MainCourse(double priceInUAH) {
-		super(priceInUAH);
+	public String getSideDish() {
+		return sideDish;
 	}
+
+	public String getMeat() {
+		return meat;
+	}
+
+	public String getSauce() {
+		return sauce;
+	}
+
+	public int getMassOfSideDishInGrams() {
+		return massOfSideDishInGrams;
+	}
+
+	public int getMassOfMeatInGrams() {
+		return massOfMeatInGrams;
+	}
+
+	public int getMassOfSauceInGrams() {
+		return massOfSauceInGrams;
+	}
+
+	public String getHeaders() {
+		return super.getHeaders() + ", sideDish, meat, sauce, massOfSideDishInGrams, massOfMeatInGrams, massOfSauce";
+	}
+
+	public String toCSV() {
+		return super.toCSV() + ", " + sideDish + ", " + meat + ", " + sauce + ", " + massOfSideDishInGrams + ", "
+				+ massOfMeatInGrams + ", " + massOfSauceInGrams;
+	}
+
 }

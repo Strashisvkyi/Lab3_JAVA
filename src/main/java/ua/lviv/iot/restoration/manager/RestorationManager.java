@@ -1,7 +1,6 @@
 package ua.lviv.iot.restoration.manager;
 
 import java.util.ArrayList;
-
 import ua.lviv.iot.restoration.model.AbstractDish;
 import ua.lviv.iot.restoration.model.Condition;
 import ua.lviv.iot.restoration.model.Order;

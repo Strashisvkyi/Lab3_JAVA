@@ -4,7 +4,6 @@ import java.util.ArrayList;
 
 public class PumpkinSoup extends Soup {
 	private String countryOfOrigin;
-	String nameOfDish = "Pumpkin soup";
 
 	public PumpkinSoup(double priceInUAH, int massInGrams, String nameOfDish, ArrayList<String> ingredients,
 			ArrayList<Specification> specifications, Condition condition, int timeForCookingInMinutes,
@@ -21,5 +20,17 @@ public class PumpkinSoup extends Soup {
 	public String toString() {
 		String info = "Soup which costs " + priceInUAH;
 		return info;
+	}
+
+	public String getCountryOfOrigin() {
+		return countryOfOrigin;
+	}
+
+	public String getHeaders() {
+		return super.getHeaders() + ", countryOfOrigin";
+	}
+
+	public String toCSV() {
+		return super.toCSV() + ", " + countryOfOrigin;
 	}
 }

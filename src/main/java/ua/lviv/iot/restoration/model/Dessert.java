@@ -21,4 +21,15 @@ public abstract class Dessert extends AbstractDish {
 
 	}
 
+	public int getPersentageOfSugar() {
+		return persentageOfSugar;
+	}
+
+	public String getHeaders() {
+		return super.getHeaders() + ", persentageOfSugar";
+	}
+
+	public String toCSV() {
+		return super.toCSV() + ", " + persentageOfSugar;
+	}
 }

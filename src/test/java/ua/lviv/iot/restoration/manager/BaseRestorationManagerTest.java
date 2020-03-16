@@ -1,9 +1,7 @@
 package ua.lviv.iot.restoration.manager;
 
 import java.util.ArrayList;
-
 import org.junit.jupiter.api.BeforeEach;
-
 import ua.lviv.iot.restoration.model.AbstractDish;
 import ua.lviv.iot.restoration.model.Condition;
 import ua.lviv.iot.restoration.model.Lasagna;
@@ -33,15 +31,13 @@ public class BaseRestorationManagerTest {
 		thirdIngredients.add("pork");
 		thirdIngredients.add("cheese");
 		thirdIngredients.add("eggs");
-		
-		
 
-		menu.add(new Lasagna(100.25, 150, "Vegetarian lasagna", firstIngredients, firstSpecifications, Condition.HOT, 50, "potato",
-				"beef", "balognesa", 100, 50, 20, "new"));
-		menu.add(new Lasagna(60.50, 100, "Cold lasagna", secondIngredients, secondSpecifications, Condition.COLD, 20, "potato",
-				"beef", "balognesa", 100, 50, 20, "standart"));
-		menu.add(new Lasagna(49.99, 250, "Hot lasagna", thirdIngredients, secondSpecifications, Condition.HOT, 35, "potato",
-				"beef", "balognesa", 100, 50, 20, "Italian"));
+		menu.add(new Lasagna(100.25, 150, "Vegetarian lasagna", firstIngredients, firstSpecifications, Condition.HOT,
+				50, "potato", "beef", "balognesa", 100, 50, 20, "new"));
+		menu.add(new Lasagna(60.50, 100, "Cold lasagna", secondIngredients, secondSpecifications, Condition.COLD, 20,
+				"potato", "beef", "balognesa", 100, 50, 20, "standart"));
+		menu.add(new Lasagna(49.99, 250, "Hot lasagna", thirdIngredients, secondSpecifications, Condition.HOT, 35,
+				"potato", "beef", "balognesa", 100, 50, 20, "Italian"));
 
 	}
 }

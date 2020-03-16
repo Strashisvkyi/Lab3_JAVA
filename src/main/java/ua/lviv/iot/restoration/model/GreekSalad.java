@@ -4,12 +4,11 @@ import java.util.ArrayList;
 
 public class GreekSalad extends Salad {
 	private String freshnessOfVegs;
-	String nameOfDish = "Greek salad";
 
 	public GreekSalad(double priceInUAH, int massInGrams, String nameOfDish, ArrayList<String> ingredients,
 			ArrayList<Specification> specifications, Condition condition, int timeForCookingInMinutes,
 			String saladDressing, String freshnessOfVegs) {
-		super(priceInUAH, massInGrams,nameOfDish, ingredients, specifications, condition, timeForCookingInMinutes,
+		super(priceInUAH, massInGrams, nameOfDish, ingredients, specifications, condition, timeForCookingInMinutes,
 				saladDressing);
 		this.freshnessOfVegs = freshnessOfVegs;
 	}
@@ -18,4 +17,15 @@ public class GreekSalad extends Salad {
 		super(priceInUAH);
 	}
 
+	public String getFreshnessOfVegs() {
+		return freshnessOfVegs;
+	}
+
+	public String getHeaders() {
+		return super.getHeaders() + ", freshnessOfVegs";
+	}
+
+	public String toCSV() {
+		return super.toCSV() + ", " + freshnessOfVegs;
+	}
 }

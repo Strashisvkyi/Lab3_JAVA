@@ -2,7 +2,6 @@ package ua.lviv.iot.restoration.manager;
 
 import java.util.ArrayList;
 import java.util.List;
-
 import ua.lviv.iot.restoration.model.AbstractDish;
 import ua.lviv.iot.restoration.model.Order;
 import ua.lviv.iot.restoration.model.Table;
@@ -16,16 +15,17 @@ public class GroupOfClients {
 	private double budgetInUAH;
 
 	public GroupOfClients(int numberOfClients, double budgetInUAH) {
-
+		super();
 		this.numberOfClients = numberOfClients;
 		this.budgetInUAH = budgetInUAH;
 	}
 
-	public GroupOfClients(int numberOfClients, List<String> preferences, double budgetInUAH) {
-		super();
-		this.numberOfClients = numberOfClients;
+	public List<String> getPreferences() {
+		return preferences;
+	}
+
+	public void setPreferences(List<String> preferences) {
 		this.preferences = preferences;
-		this.budgetInUAH = budgetInUAH;
 	}
 
 	public int getNumberOfClients() {

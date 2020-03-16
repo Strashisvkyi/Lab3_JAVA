@@ -19,6 +19,10 @@ public class Table {
 		return numberOfSeats;
 	}
 
+	public boolean isFree() {
+		return isFree;
+	}
+
 	public void setFree(boolean isFree) {
 		this.isFree = isFree;
 	}
