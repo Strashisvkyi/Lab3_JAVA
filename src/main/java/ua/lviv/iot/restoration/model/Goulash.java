@@ -5,7 +5,6 @@ import java.util.ArrayList;
 public class Goulash extends MainCourse {
 	private String pungencyLevel;
 	private DegreeOfMeatDoneness degreeOfMeatDoneness;
-	String nameOfDish = "Goulash";
 
 	public Goulash(double priceInUAH, int massInGrams, String nameOfDish, ArrayList<String> ingredients,
 			ArrayList<Specification> specifications, Condition condition, int timeForCookingInMinutes, String sideDish,
@@ -17,13 +16,20 @@ public class Goulash extends MainCourse {
 		this.degreeOfMeatDoneness = degreeOfMeatDoneness;
 	}
 
-	public Goulash(double priceInUAH) {
-		super(priceInUAH);
+	public String getPungencyLevel() {
+		return pungencyLevel;
 	}
 
-	public String toString() {
-		String info = "Goulash which costs " + priceInUAH;
-		return info;
+	public DegreeOfMeatDoneness getDegreeOfMeatDoneness() {
+		return degreeOfMeatDoneness;
+	}
+
+	public String getHeaders() {
+		return super.getHeaders() + ", pungencyLevel, degreeOfMeatDoneness";
+	}
+
+	public String toCSV() {
+		return super.toCSV() + ", " + pungencyLevel + ", " + degreeOfMeatDoneness;
 	}
 
 }

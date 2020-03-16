@@ -16,4 +16,15 @@ public abstract class Soup extends AbstractDish {
 		super(priceInUAH);
 	}
 
+	public String getConsistence() {
+		return consistence;
+	}
+
+	public String getHeaders() {
+		return super.getHeaders() + ", consistence";
+	}
+
+	public String toCSV() {
+		return super.toCSV() + ", " + consistence;
+	}
 }

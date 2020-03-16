@@ -12,6 +12,9 @@ public class AbstractDish {
 	protected Condition condition;
 	protected int timeForCookingInMinutes;
 
+	public void setNameOfDish(String nameOfDish) {
+		this.nameOfDish = nameOfDish;
+	}
 
 	public int getTimeForCookingInMinutes() {
 		return timeForCookingInMinutes;
@@ -55,7 +58,7 @@ public class AbstractDish {
 	}
 
 	public String getNameOfDish() {
-		
+
 		return nameOfDish;
 	}
 
@@ -63,4 +66,12 @@ public class AbstractDish {
 		return ingredients;
 	}
 
+	public String getHeaders() {
+		return "priceInUAH, massInGrams, nameOfDish, ingredients, specifications, condition, timeForCookingInMinutes";
+	}
+
+	public String toCSV() {
+		return priceInUAH + ", " + massInGrams + ", " + nameOfDish + "," + ingredients + ", " + specifications + ", "
+				+ condition + ", " + timeForCookingInMinutes;
+	}
 }

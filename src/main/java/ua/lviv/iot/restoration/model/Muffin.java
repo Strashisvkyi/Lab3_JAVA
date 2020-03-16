@@ -4,7 +4,6 @@ import java.util.ArrayList;
 
 public class Muffin extends Dessert {
 	private String filling;
-	String nameOfDish = "Muffin";
 
 	public Muffin(double priceInUAH, int massInGrams, String nameOfDish, ArrayList<String> ingredients,
 			ArrayList<Specification> specifications, Condition condition, int timeForCookingInMinutes,
@@ -20,7 +19,18 @@ public class Muffin extends Dessert {
 
 	public Muffin(int timeForCookingInMinutes, double priceInUAH) {
 		super(timeForCookingInMinutes, priceInUAH);
-		// TODO Auto-generated constructor stub
+
 	}
 
+	public String getFilling() {
+		return filling;
+	}
+
+	public String getHeaders() {
+		return super.getHeaders() + ", filling";
+	}
+
+	public String toCSV() {
+		return super.toCSV() + ", " + filling;
+	}
 }

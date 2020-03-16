@@ -16,13 +16,16 @@ public class Lasagna extends MainCourse {
 		this.recipeUsed = recipeUsed;
 	}
 
-	public Lasagna(double priceInUAH) {
-		super(priceInUAH);
+	public String getRecipeUsed() {
+		return recipeUsed;
 	}
 
-	public String toString() {
-		String lasagnaInfo = "Lasagna prepared using " + recipeUsed.toUpperCase() + " recipe";
-		return lasagnaInfo;
+	public String getHeaders() {
+		return super.getHeaders() + ", recipeUsed";
+	}
+
+	public String toCSV() {
+		return super.toCSV() + ", " + recipeUsed;
 	}
 
 }

@@ -5,7 +5,6 @@ import java.util.ArrayList;
 public class Pancakes extends Dessert {
 	private int numberOfPancakes;
 	private String syrup;
-	String nameOfDish = "Pancakes";
 
 	public Pancakes(double priceInUAH, int massInGrams, String nameOfDish, ArrayList<String> ingredients,
 			ArrayList<Specification> specifications, Condition condition, int timeForCookingInMinutes,
@@ -30,4 +29,19 @@ public class Pancakes extends Dessert {
 
 	}
 
+	public int getNumberOfPancakes() {
+		return numberOfPancakes;
+	}
+
+	public String getSyrup() {
+		return syrup;
+	}
+
+	public String getHeaders() {
+		return super.getHeaders() + ", numberOfPancakes, syrup";
+	}
+
+	public String toCSV() {
+		return super.toCSV() + ", " + numberOfPancakes + ", " + syrup;
+	}
 }

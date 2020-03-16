@@ -1,12 +1,9 @@
 package ua.lviv.iot.restoration.manager;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
-
 import java.util.ArrayList;
-
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
-
 import ua.lviv.iot.restoration.model.AbstractDish;
 import ua.lviv.iot.restoration.model.Condition;
 import ua.lviv.iot.restoration.model.Specification;
