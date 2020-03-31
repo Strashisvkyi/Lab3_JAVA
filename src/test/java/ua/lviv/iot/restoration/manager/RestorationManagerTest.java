@@ -34,11 +34,11 @@ public class RestorationManagerTest extends BaseRestorationManagerTest {
 
 	}
 
-	@Test
+	/*@Test
 	public void testFindTable() {
 		GroupOfClients group = new GroupOfClients(6, 500);
 		restorationManager.findTable(group);
 		assertEquals(group.getTable().getNumberOfSeats(), group.getNumberOfClients());
-	}
+	}*/
 
 }

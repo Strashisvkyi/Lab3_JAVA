@@ -40,7 +40,7 @@ public class RestorationManager {
 	}
 
 	public boolean findTable(GroupOfClients group) {
-		Table table = new Table(group.getNumberOfClients());
+		Table table = new Table(true, true, group.getNumberOfClients());
 		group.setTable(table);
 		table.setFree(false);
 		System.out.println("Manager: Here I am. Let’s find you a table...... Take this one, please");

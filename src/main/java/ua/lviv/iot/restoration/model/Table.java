@@ -1,34 +1,50 @@
 package ua.lviv.iot.restoration.model;
 
 public class Table {
-	private boolean isFree;
-	private boolean isClean;
+	private int id;
+	private boolean free;
+	private boolean clean;
 	private int numberOfSeats;
 
-	public boolean isClean() {
-		return isClean;
+	public Table(boolean free, boolean clean, int numberOfSeats) {
+		this.free = free;
+		this.clean = clean;
+		this.numberOfSeats = numberOfSeats;
 	}
 
-	public Table(int numberOfSeats) {
-		isFree = true;
-		isClean = true;
-		this.numberOfSeats = numberOfSeats;
+	public Table() {
+
+	}
+
+	public int getId() {
+		return id;
+	}
+
+	public void setId(int id) {
+		this.id = id;
+	}
+
+	public boolean isFree() {
+		return free;
+	}
+
+	public void setFree(boolean free) {
+		this.free = free;
+	}
+
+	public boolean isClean() {
+		return clean;
+	}
+
+	public void setClean(boolean clean) {
+		this.clean = clean;
 	}
 
 	public int getNumberOfSeats() {
 		return numberOfSeats;
 	}
 
-	public boolean isFree() {
-		return isFree;
+	public void setNumberOfSeats(int numberOfSeats) {
+		this.numberOfSeats = numberOfSeats;
 	}
-
-	public void setFree(boolean isFree) {
-		this.isFree = isFree;
-	}
-
-	public void setClean(boolean isClean) {
-		this.isClean = isClean;
-	}
-
 }
