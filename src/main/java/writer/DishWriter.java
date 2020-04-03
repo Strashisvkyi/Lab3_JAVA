@@ -4,7 +4,7 @@ import java.io.IOException;
 import java.io.Writer;
 import java.util.List;
 
-import ua.lviv.iot.restoration.model.AbstractDish;
+import ua.lviv.iot.restoration.rest.model.AbstractDish;
 
 public class DishWriter {
 	private Writer csvWriter;
