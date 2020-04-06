@@ -1,14 +1,16 @@
 package writer;
 
-import static org.junit.jupiter.api.Assertions.*;
+import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.fail;
 
 import java.io.FileWriter;
 import java.io.StringWriter;
 import java.io.Writer;
+
 import org.junit.jupiter.api.Test;
 
-import ua.lviv.iot.restoration.manager.BaseRestorationManagerTest;
-import ua.lviv.iot.restoration.model.AbstractDish;
+import ua.lviv.iot.restoration.rest.manager.BaseRestorationManagerTest;
+import ua.lviv.iot.restoration.rest.model.AbstractDish;
 
 class DishWriterTest extends BaseRestorationManagerTest {
 
