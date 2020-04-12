@@ -1,6 +1,7 @@
 package ua.lviv.iot.restoration.rest.controller;
 
 import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.MediaType;
@@ -14,42 +15,40 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import ua.lviv.iot.restoration.business.TableService;
-import ua.lviv.iot.restoration.rest.model.Table;
+import ua.lviv.iot.restoration.business.WaiterService;
+import ua.lviv.iot.restoration.rest.model.Waiter;
 
-@RequestMapping("/tables")
+@RequestMapping("/waiters")
 @RestController
-public class TableController {
-
+public class WaiterController {
 	@Autowired
-	private TableService tableService;
+	private WaiterService waiterService;
 
 	@PostMapping(produces = { MediaType.APPLICATION_JSON_VALUE })
-	public Table createTable(final @RequestBody Table table) {
-		return tableService.createTable(table);
+	public Waiter createWaiter(final @RequestBody Waiter waiter) {
+		return waiterService.createWaiter(waiter);
 	}
 
 	@GetMapping
-	public List<Table> getTables() {
-		return tableService.getAllTables();
+	public List<Waiter> getWaiters() {
+		return waiterService.getAllWaiters();
 	}
 
 	@GetMapping(path = "/{id}")
-	public ResponseEntity<Table> getTable(final @PathVariable("id") Integer tableId) {
-		return tableService.getTable(tableId);
+	public ResponseEntity<Waiter> getWaiter(final @PathVariable("id") Integer waiterId) {
+		return waiterService.getWaiter(waiterId);
 	}
 
 	@PutMapping(path = "/{id}")
-	public ResponseEntity<Table> updateTable(final @PathVariable("id") Integer tableId,
-			final @RequestBody Table table) {
-		return tableService.updateTable(table, tableId);
+	public ResponseEntity<Waiter> updateWaiter(final @PathVariable("id") Integer waiterId,
+			final @RequestBody Waiter waiter) {
+		return waiterService.updateWaiter(waiter, waiterId);
 
 	}
 
 	@DeleteMapping(path = "/{id}")
-	public HttpStatus deleteTable(@PathVariable("id") Integer tableId) {
-		return tableService.deleteTable(tableId);
+	public HttpStatus deleteWaiter(@PathVariable("id") Integer waiterId) {
+		return waiterService.deleteWaiter(waiterId);
 
 	}
-
 }

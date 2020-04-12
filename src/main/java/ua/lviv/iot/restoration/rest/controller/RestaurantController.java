@@ -1,6 +1,7 @@
 package ua.lviv.iot.restoration.rest.controller;
 
 import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.MediaType;
@@ -14,42 +15,40 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import ua.lviv.iot.restoration.business.TableService;
-import ua.lviv.iot.restoration.rest.model.Table;
+import ua.lviv.iot.restoration.business.RestaurantService;
+import ua.lviv.iot.restoration.rest.model.Restaurant;
 
-@RequestMapping("/tables")
+@RequestMapping("/restaurants")
 @RestController
-public class TableController {
-
+public class RestaurantController {
 	@Autowired
-	private TableService tableService;
+	private RestaurantService restaurantService;
 
 	@PostMapping(produces = { MediaType.APPLICATION_JSON_VALUE })
-	public Table createTable(final @RequestBody Table table) {
-		return tableService.createTable(table);
+	public Restaurant createRestaurant(final @RequestBody Restaurant restaurant) {
+		return restaurantService.createRestaurant(restaurant);
 	}
 
 	@GetMapping
-	public List<Table> getTables() {
-		return tableService.getAllTables();
+	public List<Restaurant> getRestaurants() {
+		return restaurantService.getAllRestaurants();
 	}
 
 	@GetMapping(path = "/{id}")
-	public ResponseEntity<Table> getTable(final @PathVariable("id") Integer tableId) {
-		return tableService.getTable(tableId);
+	public ResponseEntity<Restaurant> getRestaurant(final @PathVariable("id") Integer restaurantId) {
+		return restaurantService.getRestaurant(restaurantId);
 	}
 
 	@PutMapping(path = "/{id}")
-	public ResponseEntity<Table> updateTable(final @PathVariable("id") Integer tableId,
-			final @RequestBody Table table) {
-		return tableService.updateTable(table, tableId);
+	public ResponseEntity<Restaurant> updateRestaurant(final @PathVariable("id") Integer restaurantId,
+			final @RequestBody Restaurant restaurant) {
+		return restaurantService.updateRestaurant(restaurant, restaurantId);
 
 	}
 
 	@DeleteMapping(path = "/{id}")
-	public HttpStatus deleteTable(@PathVariable("id") Integer tableId) {
-		return tableService.deleteTable(tableId);
+	public HttpStatus deleteRestaurant(@PathVariable("id") Integer restaurantId) {
+		return restaurantService.deleteRestaurant(restaurantId);
 
 	}
-
 }
