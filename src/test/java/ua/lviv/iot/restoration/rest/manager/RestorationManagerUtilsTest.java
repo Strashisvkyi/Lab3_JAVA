@@ -4,7 +4,6 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 
 import org.junit.jupiter.api.Test;
 
-import ua.lviv.iot.restoration.rest.manager.RestorationManagerUtils;
 import ua.lviv.iot.restoration.rest.model.SortType;
 
 public class RestorationManagerUtilsTest extends BaseRestorationManagerTest {

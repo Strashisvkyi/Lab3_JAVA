@@ -7,7 +7,6 @@ import java.util.ArrayList;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
-import ua.lviv.iot.restoration.rest.manager.RestorationManager;
 import ua.lviv.iot.restoration.rest.model.AbstractDish;
 import ua.lviv.iot.restoration.rest.model.Condition;
 import ua.lviv.iot.restoration.rest.model.Specification;
@@ -38,11 +37,11 @@ public class RestorationManagerTest extends BaseRestorationManagerTest {
 
 	}
 
-	/*@Test
-	public void testFindTable() {
-		GroupOfClients group = new GroupOfClients(6, 500);
-		restorationManager.findTable(group);
-		assertEquals(group.getTable().getNumberOfSeats(), group.getNumberOfClients());
-	}*/
+	/*
+	 * @Test public void testFindTable() { GroupOfClients group = new
+	 * GroupOfClients(6, 500); restorationManager.findTable(group);
+	 * assertEquals(group.getTable().getNumberOfSeats(),
+	 * group.getNumberOfClients()); }
+	 */
 
 }

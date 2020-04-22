@@ -13,15 +13,16 @@ import javax.persistence.JoinTable;
 import javax.persistence.ManyToMany;
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+
 @Entity(name = "waiters")
 public class Waiter {
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
-	int id;
+	private int id;
 	@Column
-	int yearsOfExperience;
+	private int yearsOfExperience;
 	@Column
-	int age;
+	private int age;
 	@Column
 	String name;
 	@ManyToMany(fetch = FetchType.EAGER)
@@ -80,6 +81,5 @@ public class Waiter {
 	public void setTables(Set<Table> tables) {
 		this.tables = tables;
 	}
-	
 
 }

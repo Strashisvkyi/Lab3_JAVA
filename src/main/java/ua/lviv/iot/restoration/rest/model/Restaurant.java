@@ -14,13 +14,17 @@ import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 
 @Entity(name = "restaurants")
 public class Restaurant {
+	
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
-	int id;
+	private int id;
+	
 	@Column
-	int ratingInStars;
+	private int ratingInStars;
+	
 	@Column
-	String location;
+	private String location;
+	
 	@OneToMany(mappedBy = "restaurant", fetch = FetchType.EAGER)
 	@JsonIgnoreProperties("restaurant")
 	private Set<Table> tables;

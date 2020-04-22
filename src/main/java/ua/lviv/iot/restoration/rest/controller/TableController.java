@@ -13,43 +13,54 @@ import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
-
 import ua.lviv.iot.restoration.business.TableService;
 import ua.lviv.iot.restoration.rest.model.Table;
 
 @RequestMapping("/tables")
 @RestController
 public class TableController {
-
 	@Autowired
 	private TableService tableService;
 
 	@PostMapping(produces = { MediaType.APPLICATION_JSON_VALUE })
-	public Table createTable(final @RequestBody Table table) {
-		return tableService.createTable(table);
+	public Table createTable(final @RequestBody Table restaurant) {
+		return tableService.create(restaurant);
 	}
 
 	@GetMapping
-	public List<Table> getTables() {
-		return tableService.getAllTables();
+	public List<Table> getRestaurants() {
+		return tableService.getAll();
 	}
 
 	@GetMapping(path = "/{id}")
 	public ResponseEntity<Table> getTable(final @PathVariable("id") Integer tableId) {
-		return tableService.getTable(tableId);
+		Table foundTable = tableService.getById(tableId);
+		if (foundTable == null) {
+			return new ResponseEntity<>(HttpStatus.NOT_FOUND);
+		} else {
+			return new ResponseEntity<>(foundTable, HttpStatus.OK);
+		}
 	}
 
 	@PutMapping(path = "/{id}")
 	public ResponseEntity<Table> updateTable(final @PathVariable("id") Integer tableId,
 			final @RequestBody Table table) {
-		return tableService.updateTable(table, tableId);
+		if (tableService.getById(tableId) != null) {
+			table.setId(tableId);
+			return new ResponseEntity<>(tableService.update(tableId, table), HttpStatus.OK);
+		} else {
+			return new ResponseEntity<>(HttpStatus.NOT_FOUND);
+		}
 
 	}
 
 	@DeleteMapping(path = "/{id}")
-	public HttpStatus deleteTable(@PathVariable("id") Integer tableId) {
-		return tableService.deleteTable(tableId);
+	public ResponseEntity<Table> deleteTable(@PathVariable("id") Integer tableId) {
+		if (tableService.deleteById(tableId)) {
+			return ResponseEntity.status(HttpStatus.OK).build();
+		} else {
+			return new ResponseEntity<>(HttpStatus.NOT_FOUND);
+		}
 
 	}
-
 }

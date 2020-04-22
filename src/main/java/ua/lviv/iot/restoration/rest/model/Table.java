@@ -17,28 +17,34 @@ import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 
 @Entity(name = "tables")
 public class Table {
+	
 	@Id
 	@GeneratedValue(strategy = GenerationType.TABLE)
 	private int id;
+	
 	@Column
-	int naturalIlluminationInPercents;
+	private int naturalIlluminationInPercents;
+	
 	@Column
 	private boolean free;
+	
 	@Column
 	private boolean clean;
+	
 	@Column
 	private int numberOfSeats;
+	
 	@ManyToMany(fetch = FetchType.EAGER)
 	@JoinTable(name = "Waiter_Table", joinColumns = {
-			@JoinColumn(name = "table_id", nullable = true) }, inverseJoinColumns = {
-					@JoinColumn(name = "waiter_id", nullable = true) })
+			@JoinColumn(name = "table_id", nullable = false) }, inverseJoinColumns = {
+					@JoinColumn(name = "waiter_id", nullable = false) })
 	@JsonIgnoreProperties("tables")
 	private Set<Waiter> waiters;
+	
 	@ManyToOne(fetch = FetchType.EAGER)
 	@JsonIgnoreProperties("tables")
 	@JoinColumn(name = "restaurant_id")
 	private Restaurant restaurant;
-
 
 	public Table(boolean free, boolean clean, int numberOfSeats) {
 		this.free = free;
@@ -106,6 +112,4 @@ public class Table {
 		this.restaurant = restaurant;
 	}
 
-
-	
 }
